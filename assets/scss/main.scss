@@ -1,0 +1,55 @@
+@import 'reset';
+@import 'variables';
+@import 'mixins';
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+}
+.align-center {
+    @include align-center;
+}
+.card {
+    max-height: 240px;
+    position: relative;
+    
+    &-images-front {
+        background-image: url('../images/bg-card-front.png');
+        background-size: cover;
+        border-radius: 1rem;
+        bottom: -20%;
+        height: 160px;
+        left: 5%;
+        padding: 1rem;
+        width: 100%;
+        z-index: 1;
+
+        .circle {
+            border: 1px solid $white;
+            border-radius: 50%;
+            display: inline-block;
+            height: 10px;
+            width: 10px;
+            text-align: center;
+
+            &.active {
+                background-color: $white;
+                height: 20px;
+                width: 20px;
+            }
+        }
+    }
+
+    &-images-back {
+        right: 5%;
+        bottom: 20%;
+    }
+
+    &-images-front, &-images-back {
+        position: absolute;
+        max-width: 75%;
+
+        img {
+            width: 100%;
+        }
+    }
+}

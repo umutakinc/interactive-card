@@ -6,12 +6,35 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="assets/css/main.css">
   
   <title>Interactive card | Umut Akıncı</title>
 </head>
 <body>
 
-  
+  <section class="card">
+    <picture>
+      <source media="min-width:600px" srcset="assets/images/bg-main-desktop.png">
+      <img src="assets/images/bg-main-mobile.png" alt="Background Image">
+    </picture>
+    <div class="card-images">
+      <div class="card-images-front">
+        <div class="align-center">
+          <span class="circle active"></span>
+          <span class="circle"></span>
+        </div>
+        <div class="card-images-front-infos">
+          <p class="number">0000 0000 0000 0000</p>
+          <p class="name-and-surname">UMUT Akıncı</p>
+          <p class="date">00/00</p>
+        </div>
+      </div>
+      <div class="card-images-back">
+        <img src="assets/images/bg-card-back.png" alt="Card back">
+      </div>
+    </div>
+  </section>
 </body>
 </html>

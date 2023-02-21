@@ -9,47 +9,137 @@ body {
     @include align-center;
 }
 .card {
-    max-height: 240px;
+    @include background-image('../images/bg-main-mobile.png');
+    height: 240px;
+    width: 100%;
     position: relative;
     
     &-images-front {
-        background-image: url('../images/bg-card-front.png');
-        background-size: cover;
-        border-radius: 1rem;
+        @include background-image('../images/bg-card-front.png');
         bottom: -20%;
-        height: 160px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         left: 5%;
         padding: 1rem;
-        width: 100%;
         z-index: 1;
 
         .circle {
             border: 1px solid $white;
             border-radius: 50%;
             display: inline-block;
-            height: 10px;
-            width: 10px;
+            height: 15px;
+            width: 15px;
             text-align: center;
 
             &.active {
                 background-color: $white;
-                height: 20px;
-                width: 20px;
+                height: 30px;
+                width: 30px;
             }
+        }
+
+        &-infos {
+            color: $white;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            .number {
+                margin-bottom: 1.5rem;
+            }
+
+            .personal-info {
+                justify-content: space-between;
+
+                .name-and-surname, .date {
+                    font-size: .75rem;
+                }
+            }
+            
         }
     }
 
     &-images-back {
-        right: 5%;
+        @include background-image('../images/bg-card-back.png');
         bottom: 20%;
+        right: 5%;
+        z-index: 0;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+
+        .cvc {
+            color: $white;
+            font-size: .75rem;
+            margin-right: 1.5rem;
+        }
     }
 
     &-images-front, &-images-back {
         position: absolute;
+        border-radius: 1rem;
+        height: 160px;
+        width: 100%;
         max-width: 75%;
 
         img {
             width: 100%;
+        }
+    }
+}
+.content {
+    padding: 6rem 1.5rem 3rem;
+    
+    &-form {
+        letter-spacing: 1px;
+        
+        ::placeholder {
+            color: $lightViolet;
+        }
+        label {
+            color: $veryDarkViolet;
+            font-size: .8rem;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+        input {
+            outline: none !important;
+            border: 1px solid $lightViolet;
+            border-radius: .3rem;
+            color: $veryDarkViolet;
+            margin: .5rem 0 1rem;
+            padding: .75rem .75rem;
+            width: 100%;
+
+            &:focus {
+                border-color: $purple;
+            }
+            &.fail {
+                border-color: $red;
+            }
+        }
+        .fail-message {
+            font-size: .65rem;
+            color: $red;
+            margin-top: -.75rem;
+            margin-bottom: .5rem;
+            letter-spacing: 0;
+        }
+        .group {
+            display: flex;
+            gap: 1rem;
+
+            &-date {
+                max-width: 50%;
+
+                input {
+                    display: inline-block;
+                    max-width: 48%;
+                }
+            }
+        }
+        &-button {
+            @include button;
         }
     }
 }

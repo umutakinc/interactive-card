@@ -3,3 +3,20 @@
     align-items: center;
     gap: .5rem;
 }
+@mixin background-image ($url){
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@mixin button {
+    background-color: $veryDarkViolet;
+    border: 1px solid transparent;
+    border-radius: .3rem;
+    color: $white;
+    cursor: pointer;
+    margin: 1rem 0;
+    padding: 1rem 0;
+    outline: none !important;
+    text-align: center;
+    width: 100%;
+}

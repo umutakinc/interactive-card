@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/main.css">
@@ -15,10 +13,6 @@
 <body>
 
   <section class="card">
-    <picture>
-      <source media="min-width:600px" srcset="assets/images/bg-main-desktop.png">
-      <img src="assets/images/bg-main-mobile.png" alt="Background Image">
-    </picture>
     <div class="card-images">
       <div class="card-images-front">
         <div class="align-center">
@@ -27,14 +21,43 @@
         </div>
         <div class="card-images-front-infos">
           <p class="number">0000 0000 0000 0000</p>
-          <p class="name-and-surname">UMUT Akıncı</p>
-          <p class="date">00/00</p>
+          <div class="align-center personal-info">
+            <p class="name-and-surname">UMUT Akıncı</p>
+            <p class="date">00/00</p>
+          </div>
         </div>
       </div>
       <div class="card-images-back">
-        <img src="assets/images/bg-card-back.png" alt="Card back">
+        <p class="cvc">000</p>
       </div>
     </div>
+  </section>
+
+  <section class="content">
+      <form class="content-form" action="#">
+        <label for="cardholder-name">Cardholder Name</label>
+        <input id="card-number" type="text" placeholder="e.g. Umut Akıncı">
+        
+        <label for="card-number">Card Number</label>
+        <input id="cardholder-name" class="fail" type="text" placeholder="e.g. 1234 5678 9123 0000">
+        <p class="fail-message">Wrong format, only number</p>
+
+        <div class="group">
+          <div class="group-date">
+            <label for="card-month">Exp. Date (MM/YY)</label>
+            <input id="card-month" class="month" type="text" placeholder="MM">
+            <input id="card-year" class="year" type="text" placeholder="YY">
+          </div>
+
+          <div class="group-cvc">
+            <label for="cvc">Cvc</label>
+            <input id="cvc" type="text" placeholder="e.g 123">
+          </div>
+        </div>
+
+        <button class="content-form-button" type="submit">Confirm</button>
+      </form>
+    <div class="complate-state"></div>
   </section>
 </body>
 </html>
